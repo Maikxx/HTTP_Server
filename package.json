@@ -2,9 +2,9 @@
   "name": "http_server",
   "version": "1.0.0",
   "description": "A standard node.js http server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Maikxx/HTTP_Server/issues"
   },
-  "homepage": "https://github.com/Maikxx/HTTP_Server#readme"
+  "homepage": "https://github.com/Maikxx/HTTP_Server#readme",
+  "devDependencies": {
+    "mime-types": "^2.1.18",
+    "nodemon": "^1.15.1"
+  }
 }
