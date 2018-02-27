@@ -28,9 +28,11 @@ function handleRequest (request, response) {
         route = '/index.html';
     }
 
-    fs.readFile(path.join(exportDirName, route), (error, buffer) => {
+    const joinedPath = path.join(exportDirName, route);
+
+    fs.readFile(joinedPath, (error, buffer) => {
         // If the route url given does not correspond with the supported mime types, give back a access restriction error.
-        if (error || !supportedMimeTypes.includes(type)) {
+        if (error) {
             handleNotFounds(route, response);
         } else {
             response.statusCode = 200;
