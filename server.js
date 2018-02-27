@@ -28,6 +28,10 @@ function handleRequest (request, response) {
         route = '/index.html';
     }
 
+    if (route === '/assets') {
+        route = '/assets/index.html';
+    }
+
     const joinedPath = path.join(exportDirName, route);
 
     fs.readFile(joinedPath, (error, buffer) => {
