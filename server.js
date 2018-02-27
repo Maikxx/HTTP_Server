@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
+const serve = require('serve');
 const mimeTypesLookup = require('mime-types').lookup;
 
 const server = http.createServer(handleRequest);
 const exportDirName = 'public';
 
-const supportedMimeTypes = ['text/html', 'text/css', 'image/x-icon', 'image/jpeg', 'image/png'];
+const supportedMimeTypes = ['text/html', 'text/css', 'image/jpeg', 'image/png'];
 
 function handleNotFounds (routeURL, response) {
     fs.readFile(path.join(exportDirName, '/not_found.html'), (error, buffer) => {

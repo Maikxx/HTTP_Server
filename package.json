@@ -19,5 +19,8 @@
   "devDependencies": {
     "mime-types": "^2.1.18",
     "nodemon": "^1.15.1"
+  },
+  "dependencies": {
+    "serve": "^6.5.0"
   }
 }
