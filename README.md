@@ -12,8 +12,15 @@ npm start
 
 ## Features
 
-* 200 OK and contents if valid HTML files are asked ('index.html' & 'about.html').
-* Image handling.
-* Handle 404 routes.
-* Handle nested request to '/assets' and convert them to '/assets/index.html'.
-* Handle request to '/images', when there is no index.html serve the files.
+1. 200 OK and contents if valid HTML files are asked ('index.html' & 'about.html').
+2. Image handling.
+3. Handle 404 routes.
+4. Handle nested request to '/assets' and convert them to '/assets/index.html'.
+5. Handle request to '/images', when there is no index.html serve the files.
+
+## Testability
+
+* You can test point 1 by going to routes are accessed correctly, which contain for example an index.html file, like [localhost: index page](localhost:8000/index.html).
+* You can test point 2 by going to, for example, [localhost: cat](localhost:8000/images/cat.jpg).
+* You can test point 3 by going to a non existing route, like [localhost: non-existing route](localhost:8000/foobar.html).
+* You can test points 4 and 5 by adding and deleting **index.html** files from their corresponding folders (*/assets* and */images*) inside of the public folder.
