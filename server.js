@@ -38,7 +38,18 @@ function handleRequest (request, response) {
     fs.readFile(joinedPath, (error, buffer) => {
         // If the route url given does not correspond with the supported mime types, give back a access restriction error.
         if (error) {
-            handleNotFounds(route, response);
+            if (route === '/images' && !route.includes('index.html')) {
+                response.statusCode = 200;
+                response.setHeader('Content-Type', type);
+                response.end(serve(joinedPath, {
+                    local: true,
+                    open: `${joinedPath}`,
+                    clipless: true,
+                    port: 8000
+                }));
+            } else {
+                handleNotFounds(route, response);
+            }
         } else {
             response.statusCode = 200;
             response.setHeader('Content-Type', type);

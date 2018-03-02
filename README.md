@@ -16,3 +16,4 @@ npm start
 * Image handling.
 * Handle 404 routes.
 * Handle nested request to '/assets' and convert them to '/assets/index.html'.
+* Handle request to '/images', when there is no index.html serve the files.
