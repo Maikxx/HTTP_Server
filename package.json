@@ -1,7 +1,7 @@
 {
   "name": "http_server",
   "version": "1.0.0",
-  "description": "A standard node.js http server",
+  "description": "A standard node.js http server, which serves files and images",
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server.js"
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/Maikxx/HTTP_Server#readme",
   "devDependencies": {
-    "mime-types": "^2.1.18",
     "nodemon": "^1.15.1"
   },
   "dependencies": {
+    "mime-types": "^2.1.18",
     "serve": "^6.5.0"
   }
 }

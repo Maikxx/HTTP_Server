@@ -12,6 +12,11 @@ npm start
 
 If you have done this, you can surf to [localhost:8000](localhost:8000/) and enjoy.
 
+## Dependencies
+
+* [Serve](https://github.com/zeit/serve)
+* [MimeTypes](https://www.npmjs.com/package/mime-types)
+
 ## Features
 
 1. 200 OK and contents if valid HTML files are asked ('index.html' & 'about.html').
