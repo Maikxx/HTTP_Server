@@ -37,22 +37,31 @@ function handleRequest (request, response) {
 
     fs.readFile(joinedPath, (error, buffer) => {
         // If the route url given does not correspond with the supported mime types, give back a access restriction error.
+        response.setHeader('Content-Type', type);
+
         if (error) {
-            if (route === '/images' && !route.includes('index.html')) {
-                response.statusCode = 200;
-                response.setHeader('Content-Type', type);
-                response.end(serve(joinedPath, {
-                    local: true,
-                    open: `${joinedPath}`,
-                    clipless: true,
-                    port: 8000
-                }));
+            if (route === '/images') {
+                fs.lstat(`${joinedPath}/index.html`, (error, stats) => {
+                    if (error) {
+                        response.statusCode = 200;
+                        response.end(serve(joinedPath, {
+                            local: true,
+                            open: joinedPath,
+                            clipless: true,
+                            port: 8000
+                        }));
+                    } else {
+                        fs.readFile(`${joinedPath}/index.html`, (error, buffer) => {
+                            response.statusCode = 200;
+                            response.end(buffer);
+                        });
+                    }
+                })
             } else {
                 handleNotFounds(route, response);
             }
         } else {
             response.statusCode = 200;
-            response.setHeader('Content-Type', type);
             response.end(buffer);
         }
     });
