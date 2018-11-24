@@ -32,6 +32,6 @@ If you have done this, you can surf to [localhost:8000](localhost:8000/) and enj
 * You can test point 3 by going to a non existing route, like [localhost:8000/foobar.html](localhost:8000/foobar.html).
 * You can test points 4 and 5 by adding and deleting **index.html** files from their corresponding folders (*/assets* and */images*) inside of the public folder.
 
-## Licence
+## License
 
-[MIT](https://github.com/Maikxx/HTTP_Server/blob/master/LICENSE) © [Maikel van Veen](https://github.com/Maikxx/)
+This project is licensed as [MIT](LICENSE) by [Maikel van Veen](https://github.com/Maikxx).
